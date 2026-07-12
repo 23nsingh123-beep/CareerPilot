@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Material Symbols icon font settings ─────────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Stitch custom classes ────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(218, 226, 253, 0.5);
+}
+
+/* ── Updated Landing page classes ────────────────────────────────────────── */
+.ai-glow {
+  box-shadow: 0 0 20px rgba(0, 88, 190, 0.1);
+  border: 1px solid rgba(173, 198, 255, 0.3);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(circle at top left,    rgba(0, 90, 194, 0.05),  transparent 40%),
+    radial-gradient(circle at bottom right, rgba(75, 65, 225, 0.05), transparent 40%);
+}
+
+.dash-preview-glow {
+  box-shadow: 0 0 80px -20px rgba(0, 88, 190, 0.15);
+}
+
+.border-gradient-subtle {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom right, #e2e8f0, #ffffff) border-box;
+}
+
+/* ── Stitch Login page classes ───────────────────────────────────────────── */
+.shadow-level-1 {
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-border-gradient {
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image:
+    linear-gradient(to bottom, white, white),
+    linear-gradient(to bottom right, #e2e8f0, #ffffff);
+}
+
+/* ── Stitch Sign Up page classes ─────────────────────────────────────────── */
+.bento-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05), 0px 2px 4px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.bento-card:hover {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.focus-ring:focus {
+  outline: none;
+  border-color: #0058be;
+  box-shadow: 0 0 0 3px rgba(0, 88, 190, 0.15);
+}
+
+.role-toggle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Stitch Student Dashboard classes ────────────────────────────────────── */
+.shadow-soft {
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-border {
+  border: 1px solid #e2e8f0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.card-border:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.ai-gradient-glow {
+  background: linear-gradient(135deg, rgba(75, 65, 225, 0.03) 0%, rgba(0, 88, 190, 0.03) 100%);
+  border: 1px solid rgba(75, 65, 225, 0.1);
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* ── Stitch Resume Upload page classes ───────────────────────────────────── */
+.custom-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dashed-dropzone {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%230058beFF' stroke-width='2' stroke-dasharray='8%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 1rem;
+}
+
+.ai-container {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #4b41e1 0%, #0058be 100%) border-box;
+}
+
+.progress-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* ── Landing page scroll-reveal (replaces JS IntersectionObserver) ────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Dark layout classes (Login / Signup keep dark theme) ─────────────────── */
+.dark-layout {
+  @apply bg-slate-950 text-slate-100;
+}
+
+/* ── Scrollbar (kept neutral, works in both themes) ──────────────────────── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.25); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.45); }
+
+/* ── Legacy dark-mode utilities (used by Login/Signup) ──────────────────── */
+.glass-panel {
+  @apply bg-slate-900/50 backdrop-blur-md border border-slate-800/80;
+}
+.glass-panel-hover {
+  @apply transition-all duration-300 hover:bg-slate-900/70 hover:border-slate-700/80 hover:shadow-lg;
+}
+.text-gradient-indigo {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500;
+}
+.grid-bg {
+  background-image:
+    radial-gradient(at 50% 0%, rgba(99,102,241,0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(59,130,246,0.10) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(99,102,241,0.10) 0px, transparent 50%);
+}
+.glow-orb {
+  filter: blur(100px);
+  pointer-events: none;
+}
