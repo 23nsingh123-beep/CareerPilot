@@ -10,6 +10,10 @@ dist/
 .env.*
 backend/.env
 
+# allow safe example files
+!.env.example
+!**/.env.example
+
 # uploads
 backend/uploads/
 
