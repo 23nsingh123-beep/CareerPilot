@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
+const API_ORIGIN =
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  
 // Utility to parse basic markdown (**bold**) safely without innerHTML
 const renderText = (text) => {
   if (!text) return null;
@@ -118,7 +121,7 @@ function AIChatAssistant() {
         messages: newMessages.map(m => ({ role: m.role, content: m.content }))
       };
 
-      const res = await axios.post('http://localhost:5000/api/chat', payload);
+      const res = await axios.post(`${API_ORIGIN}/chat`, payload);
       
       if (res.data && res.data.success) {
         setMessages(prev => [...prev, {
