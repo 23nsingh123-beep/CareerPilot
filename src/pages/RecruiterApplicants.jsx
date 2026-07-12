@@ -113,12 +113,20 @@ function RecruiterApplicants() {
     }
   };
 
-  const API_BASE_URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_ORIGIN || 'http://localhost:5000';
-  const getResumeUrl = (resumePath) => {
-    if (!resumePath) return '#';
-    if (resumePath.startsWith('http')) return resumePath;
-    return `${API_BASE_URL}${resumePath.startsWith('/') ? '' : '/'}${resumePath}`;
-  };
+  const API_ORIGIN =
+  import.meta.env.VITE_API_ORIGIN ||
+  import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, '') ||
+  'http://localhost:5000';
+
+const getResumeUrl = (resumePath) => {
+  if (!resumePath) return '#';
+
+  if (resumePath.startsWith('http')) {
+    return resumePath;
+  }
+
+  return `${API_ORIGIN}${resumePath.startsWith('/') ? '' : '/'}${resumePath}`;
+};
 
   return (
     <div className="relative">
