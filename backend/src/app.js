@@ -7,23 +7,43 @@ dotenv.config();
 
 const app = express();
 
+
 // Middleware
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://career-pilot-gold.vercel.app",
   process.env.FRONTEND_URL,
-].filter(Boolean);
+]
+  .filter(Boolean)
+  .map(origin => origin.replace(/\/$/, ""));
 
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      // Allow Postman, server-to-server requests, and health checks
+      if (!origin) {
         return callback(null, true);
       }
+
+      const normalizedOrigin = origin.replace(/\/$/, "");
+
+      const isAllowed =
+        allowedOrigins.includes(normalizedOrigin) ||
+        normalizedOrigin.endsWith(".vercel.app");
+
+      if (isAllowed) {
+        return callback(null, true);
+      }
+
+      console.error("Blocked CORS origin:", origin);
       return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 app.use(express.json()); // Parses incoming JSON requests
 
 // Basic API Route
